@@ -5,7 +5,7 @@ EXPOSE 443
 
 ENV ASPNETCORE_URLS=http://+:80
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0-focal AS build
+FROM mcr.microsoft.com/dotnet/sdk:latest AS build
 WORKDIR /src
 COPY ["TodoApi.csproj", "./"]
 RUN dotnet restore "TodoApi.csproj"
