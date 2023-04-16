@@ -133,6 +133,7 @@ app.MapDelete("/todoitems/{id}", async (int id, ToDoDbContext context) =>
 
     return Results.NotFound();
 });
+app.MapGet("/",()=>"practicode server is running...");
 app.Run();
 // public class AuthController : ControllerBase
 // {
