@@ -21,7 +21,9 @@ builder.Services.AddCors(options =>
      builder => builder.AllowAnyOrigin()
      .AllowAnyMethod()
      .AllowAnyHeader());
+     builder.WithOrigins("https://practicode-client.onrender.com");
 });
+
 builder.Services.AddSwaggerGen();
 //     options =>
 // {
