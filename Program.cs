@@ -95,23 +95,23 @@ app.MapGet("/todoitems", async (ToDoDbContext context) =>
 
    return await context.Items.ToListAsync();
 });
-app.MapGet("/users", async (ToDoDbContext context) =>
-{
+// app.MapGet("/users", async (ToDoDbContext context) =>
+// {
 
-   return await context.Users.ToListAsync();
-});
+//    return await context.Users.ToListAsync();
+// });
 app.MapPost("/todoitems", async (Item todo, ToDoDbContext context) =>
 {
     context.Items.Add(todo);
     await context.SaveChangesAsync();
     return Results.Created($"/todoitems/{todo.Id}", todo);
 });
-app.MapPost("/users", async (User user, ToDoDbContext context) =>
-{
-    context.Users.Add(user);
-    await context.SaveChangesAsync();
-    return Results.Created($"/todoitems/{user.UserId}", user);
-});
+// app.MapPost("/users", async (User user, ToDoDbContext context) =>
+// {
+//     context.Users.Add(user);
+//     await context.SaveChangesAsync();
+//     return Results.Created($"/todoitems/{user.UserId}", user);
+// });
 
 app.MapPut("/todoitems/{id}", async (int id, Boolean isComplete, ToDoDbContext context) =>
 {
