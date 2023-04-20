@@ -18,10 +18,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy",
-     builder => builder.AllowAnyOrigin()
+     builder => {builder.AllowAnyOrigin()
      .AllowAnyMethod()
-     .AllowAnyHeader());
-     builder.WithOrigins("https://practicode-client.onrender.com");
+     .AllowAnyHeader();
+     builder.WithOrigins("https://practicode-client.onrender.com");});
 });
 
 builder.Services.AddSwaggerGen();
