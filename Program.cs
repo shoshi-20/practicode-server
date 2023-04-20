@@ -117,7 +117,7 @@ app.MapPut("/todoitems/{id}", async (int id, Boolean isComplete, ToDoDbContext c
 {
     var newItem = await context.Items.FindAsync(id);
     if (newItem is null) return Results.NotFound();
-    newItem.Iscomplete = isComplete;
+    newItem.IsComplete = isComplete;
     await context.SaveChangesAsync();
     return Results.Ok(newItem);
 });
