@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TodoApi;
+using Microsoft.AspNetCore.Cors;
 // using Microsoft.OpenApi.Models;
 // using System.IdentityModel.Tokens.Jwt;
 // using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -21,7 +22,8 @@ builder.Services.AddCors(options =>
      builder => {builder.AllowAnyOrigin()
      .AllowAnyMethod()
      .AllowAnyHeader();
-     builder.WithOrigins("https://practicode-client.onrender.com");});
+     //builder.WithOrigins("https://practicode-client.onrender.com");
+     });
 });
 
 builder.Services.AddSwaggerGen();
